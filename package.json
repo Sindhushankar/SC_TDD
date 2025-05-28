@@ -1,0 +1,12 @@
+{
+    "name": "SC_TDD",
+    "version": "1.0.0",
+    "description": "Implementing String Calculator using JavaScript and Jest",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "jest": "^29.7.0"
+    }
+}
