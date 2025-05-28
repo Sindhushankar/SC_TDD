@@ -1,8 +1,14 @@
 function add(numbers){
     if(numbers === "") return 0;
     let delimiter = ',';
+    //extracting delimiter
+    if(numbers.startsWith("//")){
+        let delimiterMatch = numbers.match(/^\/\/(.)\n/);
+        delimiter = delimiterMatch ? delimiterMatch[1] : null;
+        // removing delimeter part from string
+        numbers = numbers.slice(delimiterMatch[0].length);
+    }
     let newString = numbers.replace(/[\n/g]/,delimiter);
-    
     return findSum(newString, delimiter);
 
 }
@@ -15,4 +21,5 @@ function findSum(newString, delimiter) {
 }
 
 // add('1,2\n3');
+// add('//;\n1;2\n3');
 module.exports = { add };

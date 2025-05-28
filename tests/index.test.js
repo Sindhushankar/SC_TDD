@@ -15,3 +15,7 @@ test("handles sum of any numbers in a non empty string", () => {
 test("handles newline character in between the string", () => {
     expect(add("1,2\n3")).toBe(6);
 })
+
+test("handles any custom delimiter in the string", () => {
+    expect(add("//;\n1;2\n3")).toBe(6);
+})
