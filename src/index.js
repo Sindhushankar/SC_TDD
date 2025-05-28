@@ -15,11 +15,19 @@ function add(numbers){
 
 function findSum(newString, delimiter) {
     let finalArr = newString.split(delimiter);
+    // filter all neagative numbers
+    let negativeNumbers = finalArr.filter(item => item < 0);
 
+    if(negativeNumbers.length){
+        throw new Error(`Negative numbers are not allowed ${negativeNumbers.join(',')}`);
+    }
+    //return the sum of positive numbers
     return finalArr.reduce((acc,item) => acc+parseInt(item), 0);
 
 }
 
 // add('1,2\n3');
 // add('//;\n1;2\n3');
+
+// add('//;\n1;2\n3;-4;2;-1');
 module.exports = { add };
