@@ -8,7 +8,8 @@ function add(numbers){
         // removing delimeter part from string
         numbers = numbers.slice(delimiterMatch[0].length);
     }
-    let newString = numbers.replace(/[\n/g]/,delimiter);
+    let newString = numbers.replace(/\n/g,delimiter);
+    findSum(newString, delimiter);
     return findSum(newString, delimiter);
 
 }
@@ -30,4 +31,5 @@ function findSum(newString, delimiter) {
 // add('//;\n1;2\n3');
 
 // add('//;\n1;2\n3;-4;2;-1');
+// add('1\n2\n3');
 module.exports = { add };
